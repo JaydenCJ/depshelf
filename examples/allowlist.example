@@ -1,0 +1,15 @@
+# depshelf allowlist — deny-by-default when passed via --allowlist.
+# One rule per line: "<ecosystem>:<pattern>". '*' matches any run of
+# characters (it crosses '/', so scope rules cover the whole scope);
+# '?' matches exactly one character. Blank lines and #-comments ignored.
+
+# npm: an internal scope plus a few vetted singles
+npm:@myorg/*
+npm:left-pad
+npm:typescript
+
+# PyPI: patterns are PEP 503-normalized before matching, so spelling
+# "Typing_Extensions" or "typing-extensions" is equivalent.
+pypi:requests
+pypi:typing-extensions
+pypi:boto3*
